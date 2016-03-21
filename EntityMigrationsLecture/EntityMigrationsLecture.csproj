@@ -41,9 +41,19 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Faker.NET4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.Net.1.0.3\lib\net40\Faker.NET4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FizzWare.NBuilder, Version=3.0.1.0, Culture=neutral, PublicKeyToken=5651b03e12e42c12, processorArchitecture=MSIL">
+      <HintPath>..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,12 +62,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201603211507446_AddVehicle.cs" />
+    <Compile Include="Migrations\201603211507446_AddVehicle.Designer.cs">
+      <DependentUpon>201603211507446_AddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603211519419_VehicleColor.cs" />
+    <Compile Include="Migrations\201603211519419_VehicleColor.Designer.cs">
+      <DependentUpon>201603211519419_VehicleColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603211619404_RentalHistory.cs" />
+    <Compile Include="Migrations\201603211619404_RentalHistory.Designer.cs">
+      <DependentUpon>201603211619404_RentalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentACarDbModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603211507446_AddVehicle.resx">
+      <DependentUpon>201603211507446_AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603211519419_VehicleColor.resx">
+      <DependentUpon>201603211519419_VehicleColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603211619404_RentalHistory.resx">
+      <DependentUpon>201603211619404_RentalHistory.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
